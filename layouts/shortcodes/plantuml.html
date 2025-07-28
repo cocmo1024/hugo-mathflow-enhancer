@@ -1,1 +1,22 @@
+{{/*
+  Shortcode: plantuml
+  Usage:
+    {{< plantuml >}}
+    Alice -> Bob: Hello
+    {{< /plantuml >}}
+
+  Optional Param:
+    format="svg" or "png" (default: svg)
+
+  Dependencies:
+    Uses https://kroki.io as rendering backend
+*/}}
+
+{{- $format := .Get "format" | default "svg" -}}
+{{- $source := .Inner | base64Encode -}}
+<img 
+  src="https://kroki.io/plantuml/{{ $format }}/{{ $source }}" 
+  alt="PlantUML Diagram" 
+  loading="lazy"
+  style="max-width: 100%; margin: 1em 0;" />
 
