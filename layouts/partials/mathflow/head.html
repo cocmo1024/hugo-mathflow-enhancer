@@ -1,1 +1,19 @@
+<!-- ===============================
+     📐 KaTeX for Math Rendering
+     =============================== -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-Pd3pft4gNHOFC4F2AW5RpqlZuVfJVmZTJvU0slYY9CEvK6r9G6K6eBt+vvm3TFbs" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-KLMqXYoP3RbcAsUnfEqIqS1HkVEoLVZBGy+d+i8nykZQwvM1LK8DQYIb1zXRdr+U" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQRNhIn1D3xdp9zpAcI2j+jEeV9W0j3x+uSvtrhxKyI7sL6Nf3rIB6XBckK" crossorigin="anonymous"></script>
+
+<!-- ===============================
+     🔁 Mermaid.js for Diagrams
+     =============================== -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.4.0/dist/mermaid.min.js" integrity="sha384-CeR/6okpCOOiWeUJqzVhzCz1kpHiWmgzWDgIg9TkRIaTCvOeZfAiQ3qXYVfnOJgf" crossorigin="anonymous"></script>
+<script>mermaid.initialize({ startOnLoad: false });</script>
+
+<!-- ===============================
+     🧠 Custom MathFlow Initializer
+     =============================== -->
+{{ $script := resources.Get "js/mathflow-init.js" | minify | fingerprint }}
+<script src="{{ $script.RelPermalink }}" defer></script>
 
